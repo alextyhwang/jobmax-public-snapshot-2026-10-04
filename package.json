@@ -1,0 +1,27 @@
+{
+  "name": "jobmax",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "the candidate's source-controlled career operating system.",
+  "scripts": {
+    "outreach:serve": "node tools/outreach-tracker/server.mjs",
+    "outreach:test": "node --test tools/outreach-tracker/test/*.test.mjs",
+    "scan": "node scripts/job-search/cli.mjs scan",
+    "scan:dry": "node scripts/job-search/cli.mjs scan --dry-run",
+    "liveness": "node scripts/job-search/cli.mjs liveness",
+    "tracker:check": "node scripts/job-search/cli.mjs tracker:check",
+    "apply:queue": "node scripts/job-search/cli.mjs apply:queue",
+    "followups": "node scripts/job-search/cli.mjs followups",
+    "outreach:check": "node scripts/job-search/cli.mjs outreach:check",
+    "outreach:followups": "node scripts/job-search/cli.mjs outreach:followups",
+    "funnel": "node scripts/job-search/cli.mjs funnel",
+    "weekly": "node scripts/job-search/cli.mjs weekly",
+    "batch": "node scripts/job-search/cli.mjs batch",
+    "automation:log": "node scripts/automation-log.mjs",
+    "test": "node scripts/job-search/test.mjs"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  }
+}

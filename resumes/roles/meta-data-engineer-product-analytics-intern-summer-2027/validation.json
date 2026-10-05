@@ -1,0 +1,89 @@
+{
+  "artifact": "output/pdf/candidate-Meta-Data-Engineer-Product-Analytics-Intern-Summer-2027.pdf",
+  "pages": 1,
+  "sha256": "a2498a35638db3b7b7a4f3e4ae04d529aa8d1691849084a3bbaf10485f960f8e",
+  "font_size_points": 10,
+  "compiler": "Tectonic",
+  "keyword_review": {
+    "SQL": {
+      "latex_exact": true,
+      "pdf_exact": true
+    },
+    "data modeling": {
+      "latex_exact": true,
+      "pdf_exact": true
+    },
+    "Python": {
+      "latex_exact": true,
+      "pdf_exact": true
+    },
+    "C++": {
+      "latex_exact": true,
+      "pdf_exact": true
+    },
+    "C#": {
+      "latex_exact": true,
+      "pdf_exact": true
+    },
+    "Computer Science": {
+      "latex_exact": true,
+      "pdf_exact": true
+    },
+    "data models": {
+      "latex_exact": true,
+      "pdf_exact": true
+    },
+    "data quality": {
+      "latex_exact": true,
+      "pdf_exact": true
+    },
+    "production": {
+      "latex_exact": true,
+      "pdf_exact": true
+    },
+    "data engineering": {
+      "latex_exact": true,
+      "pdf_exact": true
+    },
+    "product analytics": {
+      "latex_exact": true,
+      "pdf_exact": true
+    }
+  },
+  "retained_evidence": [
+    "55%",
+    "100+ daily users",
+    "50%",
+    "25%",
+    "6,000+ weekly requests",
+    "roughly 500 prompts",
+    "30 leading models",
+    "SQL joins",
+    "20 concurrent conversations",
+    "Expected May 2028",
+    "660+ students",
+    "600 attendees"
+  ],
+  "link_count": 7,
+  "links": [
+    "mailto:candidate@example.com",
+    "https://linkedin.com/in/candidate",
+    "https://github.com/candidate",
+    "https://portfolio.example.com",
+    "https://chatio.dev",
+    "https://github.com/candidate/iMessages-Chatbot-Server",
+    "https://bayareastemacademy.org"
+  ],
+  "page_size_points": [
+    612.0,
+    792.0
+  ],
+  "text_bounds_points": [
+    32.3997802734375,
+    21.791244506835938,
+    579.6377563476562,
+    770.1397705078125
+  ],
+  "render": "build/resume-preview.png",
+  "status": "passed"
+}

@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>JobMax Outreach</title><link rel="stylesheet" href="/style.css"><script type="module" src="/app.js"></script></head>
+<body><main>
+  <header><p class="eyebrow">JOBMAX / OUTREACH</p><h1>Make the right introduction.</h1><p>Review each person and role. Track the email, then follow up only when your rules allow it.</p></header>
+  <div id="notice" role="status" aria-live="polite"></div>
+  <section aria-labelledby="setup-title"><h2 id="setup-title">Tracker setup</h2>
+    <p id="connection">Checking configuration…</p>
+    <details><summary>Configure the public endpoint</summary>
+    <form id="settings"><label>Collector URL<input name="endpoint" type="url" placeholder="https://collector.example.workers.dev" required></label><label>Collector secret<input name="adminToken" type="password" autocomplete="off" required></label><button>Save and check connection</button></form></details>
+    <div class="actions"><button id="pair" type="button">Copy extension pairing code</button><button id="refresh" type="button">Refresh statuses</button></div>
+    <p class="muted">This dashboard records events; its buttons never send messages. Reported opens are image requests, not proof of reading.</p>
+  </section>
+  <section aria-labelledby="contacts-title"><h2 id="contacts-title">Recruiter packages</h2><div id="contacts"></div></section>
+</main></body></html>

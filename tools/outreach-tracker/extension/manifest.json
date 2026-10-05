@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "JobMax Email Tracker",
+  "version": "0.1.0",
+  "description": "Add footer-free tracking to reviewed JobMax Gmail drafts. Never sends email.",
+  "permissions": ["storage", "activeTab", "scripting", "declarativeNetRequest"],
+  "host_permissions": ["http://127.0.0.1:4318/*", "https://mail.google.com/*"],
+  "background": { "service_worker": "background.js", "type": "module" },
+  "action": { "default_popup": "popup.html", "default_title": "Track a JobMax draft" },
+  "options_page": "options.html",
+  "content_scripts": [{ "matches": ["https://mail.google.com/*"], "js": ["previews.js"], "run_at": "document_start" }]
+}

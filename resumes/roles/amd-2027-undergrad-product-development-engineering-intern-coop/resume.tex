@@ -1,0 +1,106 @@
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage[top=0.32in,bottom=0.32in,left=0.45in,right=0.45in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\renewcommand{\familydefault}{\sfdefault}
+\linespread{1.015}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlist[itemize]{leftmargin=0.24in, topsep=1pt, itemsep=1pt, parsep=0pt, partopsep=0pt}
+\titleformat{\section}{\normalsize\bfseries}{}{0pt}{}[\titlerule]
+\titlespacing*{\section}{0pt}{5pt}{2pt}
+
+\newcommand{\resumeRole}[4]{%
+  \textbf{#1} \hfill #2\\
+  \textit{#3} \hfill \textit{#4}
+}
+% Stretchable gaps distribute unused page height while collapsing as content grows.
+\newcommand{\majorGap}{\vspace{1pt plus 2fill}}
+\newcommand{\entryGap}{\vspace{0pt plus 1fill}}
+
+\begin{document}
+
+\begin{center}
+{\Large \textbf{Alex Tyh Wang}}\\
+San Francisco, CA \,|\, \href{mailto:at.alex.wang@gmail.com}{at.alex.wang@gmail.com} \,|\, \href{https://www.linkedin.com/in/alex-tyh-wang/}{LinkedIn} \,|\, \href{https://github.com/alextyhwang}{GitHub} \,|\, \href{https://alexwang.site}{alexwang.site}
+\end{center}
+
+\section*{Summary}
+Computer science undergraduate with production software experience across Python, Java, C/C++, JavaScript, and TypeScript, building evaluation systems, automation, performance improvements, and reliable engineering tools.
+
+\majorGap
+\section*{Education}
+\textbf{Rochester Institute of Technology} \hfill Rochester, NY\\
+Bachelor of Science in Computer Science \hfill Expected May 2028
+
+\majorGap
+\section*{Skills}
+\textbf{Languages:} Python, Java, C++, C, JavaScript, TypeScript, C\#, SQL\\
+\textbf{Testing and Analysis:} LLM evaluation, benchmarking, deterministic validation, regex, JSON parsing, performance analysis\\
+\textbf{Systems and Delivery:} Git, GitHub, asyncio, SQLite, Jenkins, CI/CD, Azure DevOps, REST\\
+\textbf{Frameworks and AI:} Angular, React, Next.js, ASP.NET, Spring Boot, Node.js, PostgreSQL, AI agents, MCP, OpenAI API, OpenRouter
+
+\majorGap
+\section*{Experience}
+\resumeRole{Software Engineer Intern}{Jan 2026 -- Aug 2026}{Paychex}{Rochester, NY}
+\begin{itemize}
+  \item Led development of an internal AI developer platform on the \textbf{AI Integrations} team that integrated \textbf{AI agents and MCP tooling} into enterprise developer workflows; presented the platform to executives.
+  \item Built \textbf{LLM evaluation systems} for real developer workflows, comparing model behavior, reliability, and usefulness.
+  \item Reduced token usage by \textbf{55\%} with a \textbf{subagent architecture} while improving internal agent workflow performance; maintained Jenkins CI/CD pipelines supporting automated build and deployment workflows.
+\end{itemize}
+
+\entryGap
+\resumeRole{Student Researcher}{Jan 2026 -- May 2026}{Rochester Institute of Technology}{Rochester, NY}
+\begin{itemize}
+  \item Conducted research on large language models and memory.
+\end{itemize}
+
+\entryGap
+\resumeRole{Software Engineer Intern}{Feb 2025 -- Aug 2025}{Real Wave Capital}{Remote}
+\begin{itemize}
+  \item Architected production Angular and TypeScript UIs for autonomous AI agents serving \textbf{100+ daily users}; rewrote MCP tool-calling and context strategy, reducing token spend by roughly \textbf{50\%}.
+  \item Reduced .NET agent endpoint response times by \textbf{25\%} across \textbf{6,000+ weekly requests} by integrating OpenAI API and OpenRouter.
+\end{itemize}
+
+\majorGap
+\section*{Projects}
+\resumeRole{Chatio Agentic Behavior Benchmark and Chat App}{Jun 2025 -- Present}{Next.js, Python, TypeScript, AI Evaluation}{\href{https://chatio.dev}{chatio.dev}}
+\begin{itemize}
+  \item Built a \textbf{500-prompt LLM benchmark} evaluating 30 leading models across five real-world usability categories.
+  \item Designed a hybrid evaluation pipeline combining blind human pairwise review, ensemble LLM-as-judge scoring, and \textbf{deterministic Python validation}; shipped an SSE-streaming web interface with multi-step tool calling.
+\end{itemize}
+
+\entryGap
+\resumeRole{iMessage AI Gateway}{Nov 2025 -- 2026}{Python, asyncio, SQLite, OpenClaw, AppleScript}{\href{https://github.com/alextyhwang/iMessages-Chatbot-Server}{GitHub}}
+\begin{itemize}
+  \item Built an \textbf{asyncio Python API gateway} for macOS Messages supporting up to \textbf{20 concurrent}, stateful AI conversations with SQLite memory and semaphore-controlled API calls.
+  \item Integrated \textbf{OpenClaw} through a Messages.app sidecar controlling read/typing behavior without private IMCore access.
+\end{itemize}
+
+\entryGap
+\resumeRole{Word Hunt}{Sep 2024 -- Dec 2024}{Next.js, TypeScript, Figma}{\href{https://wordhunt.org}{wordhunt.org}}
+\begin{itemize}
+  \item Shipped a word game with daily puzzles, reaching \textbf{5,000 users}, \textbf{250K+ search impressions}, and \textbf{14,988 page views in 30 days}.
+\end{itemize}
+
+\majorGap
+\section*{Leadership and Activities}
+\resumeRole{Founder and President}{Jan 2022 -- Present}{Bay Area Stem Academy}{San Jose, CA \,|\, \href{https://bayareastemacademy.org}{bayareastemacademy.org}}
+\begin{itemize}
+  \item Founded and led a 501(c)(3) nonprofit that taught \textbf{660+ students} through \textbf{15+ free STEM camps}, partnered with \textbf{5+ schools}, and provided \textbf{\textdollar{}35,000+} in free STEM education.
+  \item Led a \textbf{SanDisk employee volunteer day}; owned website development, curriculum, mentoring, outreach, and logistics.
+\end{itemize}
+
+\entryGap
+\resumeRole{Event Coordinator and Executive Board Member}{Sep 2024 -- Present}{RIT Asian Culture Society}{Rochester, NY}
+\begin{itemize}
+  \item Co-lead a \textbf{200+ member} community and organize meetings, fundraising, and Night Market for \textbf{600 attendees}.
+\end{itemize}
+
+\end{document}

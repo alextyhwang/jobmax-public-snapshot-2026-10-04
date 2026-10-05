@@ -1,0 +1,115 @@
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage[top=0.32in,bottom=0.32in,left=0.45in,right=0.45in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{etoolbox}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\renewcommand{\familydefault}{\sfdefault}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlist[itemize]{leftmargin=0.24in, topsep=1pt, itemsep=1pt, parsep=0pt, partopsep=0pt}
+\titleformat{\section}{\normalsize\bfseries}{}{0pt}{}[\titlerule]
+\titlespacing*{\section}{0pt}{5pt}{2pt}
+
+\newif\ifresumeFirstSection
+\newif\ifresumeFirstRole
+\resumeFirstSectiontrue
+\resumeFirstRoletrue
+
+% Figma-style auto spacing: distribute unused page height between sections
+% and entries, while allowing the gaps to collapse on content-dense pages.
+\pretocmd{\section}{%
+  \ifresumeFirstSection
+    \global\resumeFirstSectionfalse
+  \else
+    \vspace{1pt plus 2fill}%
+  \fi
+  \global\resumeFirstRoletrue
+}{}{\PackageError{resume}{Unable to enable flexible section spacing}{}}
+
+\newcommand{\resumeRole}[4]{%
+  \ifresumeFirstRole
+    \global\resumeFirstRolefalse
+  \else
+    \vspace{0pt plus 1fill}%
+  \fi
+  \textbf{#1} \hfill #2\\
+  \textit{#3} \hfill \textit{#4}
+}
+
+\begin{document}
+
+\begin{center}
+{\Large \textbf{Alex Tyh Wang}}\\
+San Francisco, CA \,|\, \href{mailto:at.alex.wang@gmail.com}{at.alex.wang@gmail.com}\\
+\small \href{https://www.linkedin.com/in/alex-tyh-wang/}{linkedin.com/in/alex-tyh-wang} \,|\, \href{https://github.com/alextyhwang}{github.com/alextyhwang} \,|\, \href{https://alexwang.site}{alexwang.site}
+\end{center}
+
+\section*{Summary}
+Computer science undergraduate seeking a software engineering internship/co-op for Spring and/or Summer 2027, focused on user experience engineering. Builds production interfaces with React, Angular, and TypeScript, bringing Figma designs and interactive AI workflows to users.
+
+\section*{Education}
+\textbf{Rochester Institute of Technology} \hfill Rochester, NY\\
+Bachelor of Science in Computer Science \hfill Expected 05/28
+
+\section*{Skills}
+\textbf{Languages:} JavaScript, TypeScript, Python, Java, C++, SQL\\
+\textbf{Frontend and Design:} React, Angular, Next.js, Figma, Tailwind CSS, shadcn/ui, SSE streaming, IndexedDB\\
+\textbf{Backend and Tools:} REST APIs, Node.js, PostgreSQL, ASP.NET, Azure DevOps, Jenkins\\
+\textbf{AI Systems:} LLM evaluation, AI agents, MCP, tool calling, context engineering, subagent architectures
+
+\section*{Experience}
+\resumeRole{Software Engineer Intern}{Jan 2026 -- Aug 2026}{Paychex}{Rochester, NY}
+\begin{itemize}
+  \item Led development of an internal AI developer platform on the \textbf{AI Integrations} team that integrated \textbf{AI agents and MCP tooling} into enterprise developer workflows; presented the platform to executives.
+  \item Built a custom \textbf{LLM evaluation harness} for \textbf{developer and Sales workflows} to assess model reliability and usefulness.
+  \item Reduced token usage by \textbf{55\%} with a \textbf{subagent architecture} while improving internal agent workflow performance.
+\end{itemize}
+
+\resumeRole{Student Researcher}{Jan 2026 -- May 2026}{Rochester Institute of Technology}{Rochester, NY}
+\begin{itemize}
+  \item Conducted research on \textbf{large language models and memory}.
+  \item Focused on how memory and context shape long-term model behavior.
+\end{itemize}
+
+\resumeRole{Software Engineer Intern}{Feb 2025 -- Aug 2025}{Real Wave Capital}{Remote}
+\begin{itemize}
+  \item Architected production \textbf{Angular and TypeScript user interfaces} for autonomous AI agents serving \textbf{100+ daily users}.
+  \item Rewrote MCP tool-calling and context strategy for production agent workflows, reducing token spend by roughly \textbf{50\%}.
+  \item Integrated OpenAI API and OpenRouter with .NET backend contributions, improving endpoint response times by \textbf{25\%} and supporting \textbf{6,000+ weekly requests}.
+\end{itemize}
+
+\section*{Projects}
+\resumeRole{Word Hunt}{Sep 2024 -- Dec 2024}{Next.js, TypeScript, Figma}{\href{https://wordhunt.org}{wordhunt.org}}
+\begin{itemize}
+  \item Turned \textbf{Figma designs into a live Next.js game} with \textbf{250K+ impressions} and \textbf{3.9K organic clicks}.
+  \item Designed and implemented daily puzzles, free play, friend challenges, and leaderboards with \textbf{TypeScript}; enabled core play without downloads or signup.
+\end{itemize}
+
+\resumeRole{Chatio Chat}{Aug 2025}{React, Next.js, TypeScript, Tailwind CSS, IndexedDB}{\href{https://chatio.dev/chat}{chatio.dev/chat}}
+\begin{itemize}
+  \item Built a \textbf{self-hostable AI chat interface} with user-provided API keys and browser-local conversation storage in IndexedDB.
+  \item Created reusable chat modes with custom prompts, model presets, and tool configurations, plus save, share, and import flows.
+  \item Added \textbf{context-window and token/cost indicators} so users can understand model limits and usage in real time.
+  \item Implemented optional Postgres-backed conversation sharing and Cloudflare R2 image uploads while preserving local defaults.
+\end{itemize}
+
+\section*{Leadership and Activities}
+\resumeRole{Founder and President}{Jan 2022 -- Present}{Bay Area Stem Academy}{San Jose, CA \,|\, \href{https://bayareastemacademy.org}{bayareastemacademy.org}}
+\begin{itemize}
+  \item Founded a 501(c)(3) nonprofit that taught \textbf{660+ students} through \textbf{15+ free camps}, partnered with \textbf{5+ schools}, and delivered \textbf{\textdollar{}35,000+} in free STEM education.
+  \item Led curriculum, workshops, outreach, and operations; donated \textbf{\textdollar{}5,000+} to partner organizations and teams.
+  \item Led a \textbf{SanDisk} volunteer-day partnership that mobilized employees to build STEM kits for future programs.
+\end{itemize}
+
+\resumeRole{Event Coordinator and Executive Board Member}{Sep 2024 -- Present}{RIT Asian Culture Society}{Rochester, NY}
+\begin{itemize}
+  \item Co-leading a community of \textbf{200+ members} and organizing meetings, fundraising, and Night Market, an annual university-wide event with \textbf{600 attendees}.
+\end{itemize}
+
+\end{document}

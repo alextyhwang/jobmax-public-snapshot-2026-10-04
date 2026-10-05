@@ -1,0 +1,75 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[top=0.32in,bottom=0.32in,left=0.45in,right=0.45in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{etoolbox}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\renewcommand{\familydefault}{\sfdefault}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlist[itemize]{leftmargin=0.24in,topsep=1pt,itemsep=1pt,parsep=0pt,partopsep=0pt}
+\titleformat{\section}{\normalsize\bfseries}{}{0pt}{}[\titlerule]
+\titlespacing*{\section}{0pt}{5pt}{2pt}
+\newif\ifresumeFirstSection
+\newif\ifresumeFirstRole
+\resumeFirstSectiontrue
+\resumeFirstRoletrue
+\pretocmd{\section}{\ifresumeFirstSection\global\resumeFirstSectionfalse\else\vspace{1pt plus 2fill}\fi\global\resumeFirstRoletrue}{}{}
+\newcommand{\resumeRole}[4]{\ifresumeFirstRole\global\resumeFirstRolefalse\else\vspace{0pt plus 1fill}\fi\textbf{#1}\hfill #2\\\textit{#3}\hfill\textit{#4}}
+\begin{document}
+\begin{center}
+{\Large\textbf{Alex Tyh Wang}}\\
+San Francisco, CA \,|\, \href{mailto:at.alex.wang@gmail.com}{at.alex.wang@gmail.com}\\
+\small\href{https://www.linkedin.com/in/alex-tyh-wang/}{linkedin.com/in/alex-tyh-wang} \,|\, \href{https://github.com/alextyhwang}{github.com/alextyhwang} \,|\, \href{https://alexwang.site}{alexwang.site}
+\end{center}
+\section*{Summary}
+Computer science undergraduate seeking a Summer 2027 software engineering internship in applications and engineering tools, with experience in internal platforms, production web applications, Python automation, and software testing.
+\section*{Education}
+\textbf{Rochester Institute of Technology}\hfill Rochester, NY\\
+Bachelor of Science in Computer Science\hfill Expected May 2028
+\section*{Skills}
+\textbf{Languages:} Python, JavaScript, TypeScript, Java, C, C++, C\#, SQL\\
+\textbf{Applications and Databases:} Angular, React, Next.js, Node.js, ASP.NET, Spring Boot, REST APIs, PostgreSQL, SQLite\\
+\textbf{Tools:} Git, Linux CLI, VS Code, Microsoft Office (Word, Excel, PowerPoint), Jenkins, CI/CD, Azure DevOps\\
+\textbf{Fundamentals:} Debugging, data structures, algorithms, software testing, performance optimization, workflow automation
+\section*{Experience}
+\resumeRole{Software Engineer Intern}{Jan 2026 -- Aug 2026}{Paychex -- AI Integrations}{Rochester, NY}
+\begin{itemize}
+\item Led development of an \textbf{internal AI developer platform} integrating AI agents and Model Context Protocol (MCP) tools into enterprise engineering workflows; presented the platform to executives.
+\item Built a custom \textbf{software evaluation harness} for large language models (LLMs), testing reliability and usefulness for developer and Sales workflows.
+\item Reduced token usage by \textbf{55\%} with a \textbf{subagent architecture} while improving internal agent workflow performance.
+\item Maintained and updated \textbf{Jenkins CI/CD pipelines} supporting automated software builds and deployment.
+\end{itemize}
+\resumeRole{Software Engineer Intern}{Feb 2025 -- Aug 2025}{Real Wave Capital}{Remote}
+\begin{itemize}
+\item Developed \textbf{Angular and TypeScript application interfaces} for production AI agents serving \textbf{100+ daily users}.
+\item Integrated OpenAI API and OpenRouter with .NET backend contributions, improving endpoint response times by \textbf{25\%} and supporting \textbf{6,000+ weekly requests}.
+\item Reworked tool-calling and context-management software to reduce production AI token spend by roughly \textbf{50\%}.
+\end{itemize}
+\section*{Projects}
+\resumeRole{Chatio Benchmark and Chat Application}{Jun 2025 -- Present}{Python, TypeScript, Next.js, IndexedDB, Cloudflare R2}{\href{https://chatio.dev}{chatio.dev}}
+\begin{itemize}
+\item Built a \textbf{${\sim}$500-prompt evaluation platform} combining human review, model scoring, and automated Python checks using regular expressions and JSON parsing.
+\item Developed a streaming web application and a persistence layer using IndexedDB and Cloudflare R2, reducing image storage by \textbf{95\%} through compression.
+\item Published technical documentation covering evaluation design, scoring methods, limitations, and update policy.
+\end{itemize}
+\resumeRole{iMessages Chatbot Server}{Nov 2025 -- 2026}{Python, asyncio, SQLite, AppleScript}{\href{https://github.com/alextyhwang/iMessages-Chatbot-Server}{github.com/alextyhwang/iMessages-Chatbot-Server}}
+\begin{itemize}
+\item Built a \textbf{Python API gateway} integrating macOS Messages with AI services, supporting up to \textbf{20 concurrent conversations} and persistent SQLite message history.
+\item Implemented semaphore-controlled API calls, serialized message delivery, and debounce batching to coordinate concurrent work and target \textbf{under-2-second internal latency}.
+\end{itemize}
+\section*{Leadership and Activities}
+\resumeRole{Founder and President}{Jan 2022 -- Present}{Bay Area Stem Academy}{San Jose, CA \,|\, \href{https://bayareastemacademy.org}{bayareastemacademy.org}}
+\begin{itemize}
+\item Founded a 501(c)(3) nonprofit that taught \textbf{660+ students} through \textbf{15+ free STEM camps} and partnered with \textbf{5+ schools}.
+\item Led curriculum, mentor coordination, and operations, delivering \textbf{\$35,000+} in free STEM education and donating \textbf{\$5,000+}.
+\item Led communications and logistics for a \textbf{SanDisk} volunteer-day partnership building STEM kits for future programs.
+\end{itemize}
+\resumeRole{Event Coordinator and Executive Board Member}{Sep 2024 -- Present}{RIT Asian Culture Society}{Rochester, NY}
+\begin{itemize}
+\item Co-lead a \textbf{200+ member} community; help organize fundraising and Night Market, which draws \textbf{600 attendees}.
+\end{itemize}
+\end{document}

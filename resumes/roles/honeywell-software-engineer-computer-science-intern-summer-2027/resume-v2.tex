@@ -1,0 +1,108 @@
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage[top=0.32in,bottom=0.32in,left=0.45in,right=0.45in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{etoolbox}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\renewcommand{\familydefault}{\sfdefault}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlist[itemize]{leftmargin=0.24in, topsep=1pt, itemsep=1pt, parsep=0pt, partopsep=0pt}
+\titleformat{\section}{\normalsize\bfseries}{}{0pt}{}[\titlerule]
+\titlespacing*{\section}{0pt}{5pt}{2pt}
+
+\newif\ifresumeFirstSection
+\newif\ifresumeFirstRole
+\resumeFirstSectiontrue
+\resumeFirstRoletrue
+
+\pretocmd{\section}{%
+  \ifresumeFirstSection
+    \global\resumeFirstSectionfalse
+  \else
+    \vspace{1pt plus 2fill}%
+  \fi
+  \global\resumeFirstRoletrue
+}{}{\PackageError{resume}{Unable to enable flexible section spacing}{}}
+
+\newcommand{\resumeRole}[4]{%
+  \ifresumeFirstRole
+    \global\resumeFirstRolefalse
+  \else
+    \vspace{0pt plus 1fill}%
+  \fi
+  \textbf{#1} \hfill #2\\
+  \textit{#3} \hfill \textit{#4}
+}
+
+\begin{document}
+
+\begin{center}
+{\Large \textbf{Alex Tyh Wang}}\\
+San Francisco, CA \,|\, \href{mailto:at.alex.wang@gmail.com}{at.alex.wang@gmail.com}\\
+\small \href{https://www.linkedin.com/in/alex-tyh-wang/}{linkedin.com/in/alex-tyh-wang} \,|\, \href{https://github.com/alextyhwang}{github.com/alextyhwang} \,|\, \href{https://alexwang.site}{alexwang.site}
+\end{center}
+
+\section*{Summary}
+Computer science undergraduate seeking a software engineering internship/co-op for Spring and/or Summer 2027, with experience \textbf{designing, developing, and integrating production software applications}, AI automation, and full-stack products.
+
+\section*{Education}
+\textbf{Rochester Institute of Technology} \hfill Rochester, NY\\
+Bachelor of Science in Computer Science \hfill Expected May 2028
+
+\section*{Skills}
+\textbf{Languages:} Python, JavaScript, TypeScript, Java, C, C++, C\#, SQL\\
+\textbf{Software Engineering:} React, Angular, Next.js, Spring Boot, REST, ASP.NET, Node.js, PostgreSQL, Git, Linux CLI, VS Code\\
+\textbf{AI and Automation:} LLM evaluation, AI agents, multi-agent systems, MCP, tool calling, RAG, OpenAI API, OpenRouter\\
+\textbf{Delivery and Fundamentals:} CI/CD, Jenkins, debugging, software testing, data structures, algorithms, Microsoft Office
+
+\section*{Experience}
+\resumeRole{Software Engineer Intern}{Jan 2026 -- Aug 2026}{Paychex}{Rochester, NY}
+\begin{itemize}
+  \item Led development of an internal \textbf{AI developer platform} on the AI Integrations team, integrating \textbf{AI agents and MCP tooling} into enterprise developer workflows and presenting progress to executives.
+  \item Built a custom \textbf{LLM evaluation harness} for developer and Sales workflows to analyze model behavior, reliability, and usefulness.
+  \item Reduced token usage by \textbf{55\%} with a \textbf{subagent architecture} while improving internal agent workflow performance.
+  \item Maintained Jenkins \textbf{CI/CD pipelines} supporting automated build and deployment workflows.
+\end{itemize}
+
+\resumeRole{Student Researcher}{Jan 2026 -- May 2026}{Rochester Institute of Technology}{Rochester, NY}
+\begin{itemize}
+  \item Conducted research on \textbf{large language models and memory}, examining how memory and context shape model behavior.
+\end{itemize}
+
+\resumeRole{Software Engineer Intern}{Feb 2025 -- Aug 2025}{Real Wave Capital}{Remote}
+\begin{itemize}
+  \item Architected production Angular/TypeScript interfaces for autonomous AI agents and rewrote MCP tool-calling and context strategy, supporting \textbf{100+ daily users} and reducing token spend by roughly \textbf{50\%}.
+  \item Integrated OpenAI API and OpenRouter into production agent flows with .NET backend contributions, improving endpoint response times by \textbf{25\%} and scaling to \textbf{6,000+ weekly requests}.
+\end{itemize}
+
+\section*{Projects}
+\resumeRole{Chatio Agentic Behavior Benchmark and Chat App}{Jun 2025 -- Present}{Next.js, Python, TypeScript, LLM Evaluation}{\href{https://chatio.dev}{chatio.dev}}
+\begin{itemize}
+  \item Built a roughly \textbf{500-prompt} LLM benchmark and evaluation pipeline using blind human review, ensemble LLM-as-judge scoring, and deterministic Python validation.
+  \item Developed a production streaming chat product with SSE, multi-step agent workflows, tool calling, and local-first IndexedDB persistence.
+\end{itemize}
+
+\resumeRole{Word Hunt}{Sep 2024 -- Dec 2024}{Next.js, TypeScript, Figma}{\href{https://wordhunt.org}{wordhunt.org}}
+\begin{itemize}
+  \item Designed and shipped a live word game with daily puzzles, friend challenges, and leaderboards, reaching about \textbf{5,000 users}, \textbf{250K+ impressions}, and \textbf{3.9K organic clicks}.
+\end{itemize}
+
+\section*{Leadership and Activities}
+\resumeRole{Founder and President}{Jan 2022 -- Present}{Bay Area Stem Academy}{San Jose, CA \,|\, \href{https://bayareastemacademy.org}{bayareastemacademy.org}}
+\begin{itemize}
+  \item Founded a 501(c)(3) nonprofit that taught \textbf{660+ students} through \textbf{15+ free camps}, partnered with \textbf{5+ schools}, and delivered \textbf{\textdollar{}35,000+} in free STEM education.
+  \item Led curriculum, outreach, and operations; partnered with \textbf{SanDisk} on a volunteer day to build STEM kits.
+\end{itemize}
+
+\resumeRole{Event Coordinator and Executive Board Member}{Sep 2024 -- Present}{RIT Asian Culture Society}{Rochester, NY}
+\begin{itemize}
+  \item Co-lead a \textbf{200+ member} campus community and coordinate Night Market, an annual university-wide event drawing \textbf{600 attendees}.
+\end{itemize}
+
+\end{document}

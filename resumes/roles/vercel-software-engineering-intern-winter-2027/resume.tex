@@ -1,0 +1,114 @@
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage[top=0.32in,bottom=0.32in,left=0.45in,right=0.45in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{etoolbox}
+\usepackage{fontspec}
+\setmainfont{Arial}
+\setsansfont{Arial}
+\renewcommand{\familydefault}{\sfdefault}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\raggedright
+\setlist[itemize]{leftmargin=0.24in, topsep=1pt, itemsep=1pt, parsep=0pt, partopsep=0pt}
+\titleformat{\section}{\normalsize\bfseries}{}{0pt}{}[\titlerule]
+\titlespacing*{\section}{0pt}{5pt}{2pt}
+
+\newif\ifresumeFirstSection
+\newif\ifresumeFirstRole
+\resumeFirstSectiontrue
+\resumeFirstRoletrue
+
+% Figma-style auto spacing: distribute unused page height between sections
+% and entries, while allowing the gaps to collapse on content-dense pages.
+\pretocmd{\section}{%
+  \ifresumeFirstSection
+    \global\resumeFirstSectionfalse
+  \else
+    \vspace{1pt plus 2fill}%
+  \fi
+  \global\resumeFirstRoletrue
+}{}{\PackageError{resume}{Unable to enable flexible section spacing}{}}
+
+\newcommand{\resumeRole}[4]{%
+  \ifresumeFirstRole
+    \global\resumeFirstRolefalse
+  \else
+    \vspace{0pt plus 1fill}%
+  \fi
+  \textbf{#1} \hfill #2\\
+  \textit{#3} \hfill \textit{#4}
+}
+
+\begin{document}
+
+\begin{center}
+{\Large \textbf{Alex Tyh Wang}}\\
+San Francisco, CA \,|\, \href{mailto:at.alex.wang@gmail.com}{at.alex.wang@gmail.com}\\
+\small \href{https://www.linkedin.com/in/alex-tyh-wang/}{linkedin.com/in/alex-tyh-wang} \,|\, \href{https://github.com/alextyhwang}{github.com/alextyhwang} \,|\, \href{https://alexwang.site}{alexwang.site}
+\end{center}
+
+\section*{Summary}
+Computer science undergraduate seeking a software engineering internship/co-op for Spring and/or Summer 2027. Builds TypeScript products, AI developer tools, and evaluation systems with measurable production impact.
+
+\section*{Education}
+\textbf{Rochester Institute of Technology} \hfill Rochester, NY\\
+Bachelor of Science in Computer Science \hfill Expected May 2028
+
+\section*{Skills}
+\textbf{Languages:} TypeScript, JavaScript, Python, SQL, C\#, Java\\
+\textbf{Web and Backend:} Next.js, React, Angular, Node.js, PostgreSQL, REST APIs, .NET\\
+\textbf{AI Tooling:} Vercel AI SDK, Claude Code, MCP, tool calling, LLM evaluation, context engineering\\
+\textbf{Development:} Git, Linux CLI, VS Code, debugging, software testing, data structures and algorithms, CI/CD
+
+\section*{Experience}
+\resumeRole{Software Engineer Intern}{Jan 2026 -- Aug 2026}{Paychex}{Rochester, NY}
+\begin{itemize}
+  \item Led development of an internal \textbf{AI developer platform} integrating \textbf{AI agents and MCP tooling} into enterprise developer workflows; presented the platform and progress to executives.
+  \item Built a custom \textbf{LLM evaluation harness} for developer and Sales workflows to assess reliability and usefulness.
+  \item Reduced token usage by \textbf{55\%} with a \textbf{subagent architecture} while improving internal agent workflow performance.
+\end{itemize}
+
+\resumeRole{Student Researcher}{Jan 2026 -- May 2026}{Rochester Institute of Technology}{Rochester, NY}
+\begin{itemize}
+  \item Conducted research on \textbf{large language models and memory}.
+\end{itemize}
+
+\resumeRole{Software Engineer Intern}{Feb 2025 -- Aug 2025}{Real Wave Capital}{Remote}
+\begin{itemize}
+  \item Architected production \textbf{Angular and TypeScript} interfaces for autonomous AI agents serving \textbf{100+ daily users}.
+  \item Rewrote production \textbf{MCP tool calling and context strategy}, reducing token spend by \textbf{approximately 50\%}.
+  \item Integrated OpenAI API and OpenRouter with .NET backend contributions; improved endpoint response times by \textbf{25\%} and supported \textbf{6,000+ weekly requests}.
+\end{itemize}
+
+\section*{Projects}
+\resumeRole{Chatio -- AI Chat and LLM Benchmark}{Jun 2025 -- Present}{Next.js, React, TypeScript, Vercel AI SDK, Python}{\href{https://chatio.dev}{chatio.dev}}
+\begin{itemize}
+  \item Built a self-hostable chat app with \textbf{Vercel AI SDK}, streaming and multi-step \textbf{tool calling}; added reusable prompts, model presets, and tool configurations.
+  \item Engineered \textbf{IndexedDB} conversation persistence and optional Postgres sharing, preserving local-first storage and zero-config self-hosting for basic use.
+  \item Designed a \textbf{\textasciitilde{}500-prompt benchmark} with human review, ensemble judging, and deterministic Python checks; documented evaluation methods and limitations in a public \textbf{system card}.
+\end{itemize}
+
+\resumeRole{Word Hunt}{Sep 2024 -- Dec 2024}{Next.js, TypeScript, Figma}{\href{https://wordhunt.org}{wordhunt.org}}
+\begin{itemize}
+  \item Shipped a \textbf{Next.js word game} from Figma designs, reaching \textbf{250K+ impressions} and \textbf{3.9K organic clicks}.
+  \item Implemented daily puzzles, free play, friend challenges, and leaderboards in TypeScript.
+\end{itemize}
+
+\section*{Leadership and Activities}
+\resumeRole{Founder and President}{Jan 2022 -- Present}{Bay Area Stem Academy}{San Jose, CA \,|\, \href{https://bayareastemacademy.org}{bayareastemacademy.org}}
+\begin{itemize}
+  \item Founded a 501(c)(3) nonprofit; taught \textbf{660+ students} through \textbf{15+ free camps}, partnered with \textbf{5+ schools}, and provided \textbf{\textdollar{}35,000+} in free STEM education.
+  \item Led curriculum and operations; coordinated a \textbf{SanDisk} volunteer-day partnership to build STEM kits.
+\end{itemize}
+
+\resumeRole{Event Coordinator and Executive Board Member}{Sep 2024 -- Present}{RIT Asian Culture Society}{Rochester, NY}
+\begin{itemize}
+  \item Co-lead a \textbf{200+ member} community and help organize Night Market, an annual event with \textbf{600 attendees}.
+\end{itemize}
+
+\end{document}

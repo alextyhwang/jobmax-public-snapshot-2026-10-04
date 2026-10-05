@@ -1,0 +1,106 @@
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage[top=0.32in,bottom=0.32in,left=0.45in,right=0.45in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{etoolbox}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\renewcommand{\familydefault}{\sfdefault}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlist[itemize]{leftmargin=0.24in, topsep=1pt, itemsep=1pt, parsep=0pt, partopsep=0pt}
+\titleformat{\section}{\normalsize\bfseries}{}{0pt}{}[\titlerule]
+\titlespacing*{\section}{0pt}{5pt}{2pt}
+
+\newif\ifresumeFirstSection
+\newif\ifresumeFirstRole
+\resumeFirstSectiontrue
+\resumeFirstRoletrue
+\pretocmd{\section}{%
+  \ifresumeFirstSection
+    \global\resumeFirstSectionfalse
+  \else
+    \vspace{1pt plus 2fill}%
+  \fi
+  \global\resumeFirstRoletrue
+}{}{\PackageError{resume}{Unable to enable flexible section spacing}{}}
+\newcommand{\resumeRole}[4]{%
+  \ifresumeFirstRole
+    \global\resumeFirstRolefalse
+  \else
+    \vspace{0pt plus 1fill}%
+  \fi
+  \textbf{#1} \hfill #2\\
+  \textit{#3} \hfill \textit{#4}
+}
+
+\begin{document}
+\begin{center}
+{\Large \textbf{Alex Tyh Wang}}\\
+San Francisco, CA \,|\, \href{mailto:at.alex.wang@gmail.com}{at.alex.wang@gmail.com}\\
+\small \href{https://www.linkedin.com/in/alex-tyh-wang/}{linkedin.com/in/alex-tyh-wang} \,|\, \href{https://github.com/alextyhwang}{github.com/alextyhwang} \,|\, \href{https://alexwang.site}{alexwang.site}
+\end{center}
+
+\section*{Summary}
+Computer science undergraduate seeking a software engineering internship/co-op for Summer 2027, focused on data engineering and product analytics. Built Python evaluation pipelines, SQL-backed systems, and production AI products.
+
+\section*{Education}
+\textbf{Rochester Institute of Technology} \hfill Rochester, NY\\
+Bachelor of Science in Computer Science \hfill Expected May 2028
+
+\section*{Skills}
+\textbf{Languages:} SQL, Python, C++, C\#, Java, TypeScript, JavaScript\\
+\textbf{Data:} Data modeling fundamentals, SQLite, PostgreSQL, Apache Spark, Hadoop/MapReduce\\
+\textbf{Evaluation:} Data quality checks, data validation, deterministic Python testing, LLM evaluation\\
+\textbf{Engineering:} Git, Linux CLI, REST APIs, asyncio, Jenkins, CI/CD, Angular, Next.js, .NET
+
+\section*{Experience}
+\resumeRole{Software Engineer Intern -- AI Integrations}{Jan 2026 -- Aug 2026}{Paychex}{Rochester, NY}
+\begin{itemize}
+  \item Led development of an internal AI developer platform integrating \textbf{AI agents and MCP tooling} into enterprise workflows; presented the platform to executives.
+  \item Built a custom \textbf{LLM evaluation harness} for developer and Sales workflows to compare model behavior, reliability, and usefulness.
+  \item Reduced token usage by \textbf{55\%} with a \textbf{subagent architecture} while improving internal agent workflow performance.
+\end{itemize}
+
+\resumeRole{Student Researcher}{Jan 2026 -- May 2026}{Rochester Institute of Technology}{Rochester, NY}
+\begin{itemize}
+  \item Conducted research on \textbf{large language models and memory}.
+  \item Focused on how memory and context shape long-term model behavior.
+\end{itemize}
+
+\resumeRole{Software Engineer Intern}{Feb 2025 -- Aug 2025}{Real Wave Capital}{Remote}
+\begin{itemize}
+  \item Built production Angular and TypeScript interfaces for AI agents serving \textbf{100+ daily users}; rewrote tool-calling and context strategy to reduce token spend by roughly \textbf{50\%}.
+  \item Integrated OpenAI API and OpenRouter into .NET-backed agent workflows, improving endpoint response times by \textbf{25\%} and supporting \textbf{6,000+ weekly requests}.
+\end{itemize}
+
+\section*{Projects}
+\resumeRole{Chatio LLM Benchmark}{Jun 2025 -- Present}{Python, Next.js, TypeScript}{\href{https://chatio.dev}{chatio.dev}}
+\begin{itemize}
+  \item Built a \textbf{dataset of roughly 500 prompts} across five assistant-utility pillars; evaluated \textbf{30 leading models}.
+  \item Built an \textbf{evaluation pipeline} combining blind human review, ensemble model scoring, and \textbf{deterministic Python validation} using regex and JSON parsing.
+  \item Visualized model comparisons with radar charts; documented scoring and contamination controls in a public system card.
+\end{itemize}
+
+\resumeRole{iMessages Chatbot Server}{Nov 2025 -- 2026}{Python, SQL, SQLite, asyncio}{\href{https://github.com/alextyhwang/iMessages-Chatbot-Server}{github.com/alextyhwang/iMessages-Chatbot-Server}}
+\begin{itemize}
+  \item Designed \textbf{SQLite data models} for message history and processing state, with a sender/timestamp index and parameterized \textbf{SQL} for conversation retrieval.
+  \item Built incremental message ingestion using \textbf{SQL joins}, row-ID checkpoints, and null/empty-text filtering to process incoming messages and persist conversation history.
+  \item Built a Python gateway for up to \textbf{20 concurrent conversations} using asyncio, debounce batching, and semaphore-limited calls.
+\end{itemize}
+
+\section*{Leadership and Activities}
+\resumeRole{Founder and President}{Jan 2022 -- Present}{Bay Area Stem Academy}{San Jose, CA \,|\, \href{https://bayareastemacademy.org}{bayareastemacademy.org}}
+\begin{itemize}
+  \item Founded a 501(c)(3) nonprofit that taught \textbf{660+ students} through \textbf{15+ free camps}, partnered with \textbf{5+ schools}, and provided \textbf{\textdollar{}35,000+} in free STEM education.
+  \item Led curriculum and a \textbf{SanDisk} volunteer partnership; donated \textbf{\textdollar{}5,000+} to partner organizations and teams.
+\end{itemize}
+
+\resumeRole{Event Coordinator and Executive Board Member}{Sep 2024 -- Present}{RIT Asian Culture Society}{Rochester, NY}
+\begin{itemize}
+  \item Co-lead a \textbf{200+ member} community and help organize Night Market, an annual university-wide event with \textbf{600 attendees}.
+\end{itemize}
+\end{document}

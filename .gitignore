@@ -1,0 +1,47 @@
+.DS_Store
+
+# Environment and local secrets
+.env
+.env.*
+!.env.example
+
+# Editor and OS files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs and caches
+*.log
+.cache/
+__pycache__/
+node_modules/
+.tools/
+tmp/
+temp/
+
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.log
+*.lot
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+
+# Generated resume/application exports
+profile/resume/*.pdf
+resumes/roles/*/*.pdf
+resumes/roles/*/build/
+exports/
+
+# Outreach tracker runtime data, credentials, and worker development state
+.local/
+.wrangler/
+.dev.vars

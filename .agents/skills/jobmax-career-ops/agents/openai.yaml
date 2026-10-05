@@ -1,0 +1,4 @@
+interface:
+  display_name: "JobMax Career Ops"
+  short_description: "Run JobMax job-search automation workflows."
+  default_prompt: "Run the JobMax career ops tracker and summarize next actions."

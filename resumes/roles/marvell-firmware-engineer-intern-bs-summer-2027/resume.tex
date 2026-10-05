@@ -1,0 +1,110 @@
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage[top=0.32in,bottom=0.32in,left=0.45in,right=0.45in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{etoolbox}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\renewcommand{\familydefault}{\sfdefault}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlist[itemize]{leftmargin=0.24in, topsep=1pt, itemsep=1pt, parsep=0pt, partopsep=0pt}
+\titleformat{\section}{\normalsize\bfseries}{}{0pt}{}[\titlerule]
+\titlespacing*{\section}{0pt}{5pt}{2pt}
+
+\newif\ifresumeFirstSection
+\newif\ifresumeFirstRole
+\resumeFirstSectiontrue
+\resumeFirstRoletrue
+
+\pretocmd{\section}{%
+  \ifresumeFirstSection
+    \global\resumeFirstSectionfalse
+  \else
+    \vspace{1pt plus 2fill}%
+  \fi
+  \global\resumeFirstRoletrue
+}{}{\PackageError{resume}{Unable to enable flexible section spacing}{}}
+
+\newcommand{\resumeRole}[4]{%
+  \ifresumeFirstRole
+    \global\resumeFirstRolefalse
+  \else
+    \vspace{0pt plus 1fill}%
+  \fi
+  \textbf{#1} \hfill #2\\
+  \textit{#3} \hfill \textit{#4}
+}
+
+\begin{document}
+
+\begin{center}
+{\Large \textbf{Alex Tyh Wang}}\\
+San Francisco, CA \,|\, \href{mailto:at.alex.wang@gmail.com}{at.alex.wang@gmail.com}\\
+\small \href{https://www.linkedin.com/in/alex-tyh-wang/}{linkedin.com/in/alex-tyh-wang} \,|\, \href{https://github.com/alextyhwang}{github.com/alextyhwang} \,|\, \href{https://alexwang.site}{alexwang.site}
+\end{center}
+
+\section*{Summary}
+Computer science undergraduate seeking a software engineering internship/co-op for Spring and/or Summer 2027, with experience in \textbf{Python automation}, software testing, debugging, CI/CD, and production systems.
+
+\section*{Education}
+\textbf{Rochester Institute of Technology} \hfill Rochester, NY\\
+Bachelor of Science in Computer Science \hfill Expected May 2028
+
+\section*{Skills}
+\textbf{Languages and Tools:} Python, C, C++, bash scripting, Git, GitHub, Gerrit, Windows, Linux, Makefiles, GDB, IDEs (VS Code)\\
+\textbf{Systems Fundamentals:} Computer architecture, embedded systems, ARM CPU, RISC-V, TrustZone, Caliptra, Trusted Firmware; RTOS architecture, device drivers; SPI, I2C, I3C, UART, USB, PCIe, MDIO\\
+\textbf{Networking and Security Fundamentals:} OSI model, TCP/IP, Ethernet, SERDES, Switches, Routers; IPSec, TLS/SSL, SPDM, digital certificates, cryptography\\
+\textbf{DSP Fundamentals:} Equalizers, Filters, ADC, DAC, FFE, DFE\\
+\textbf{Software Engineering:} Jenkins CI, software regression planning, unit testing, system integration, debugging tools, GUI development; familiarity with lab automation and customer SDKs\\
+\textbf{Collaboration:} Problem-solving, verbal and written communication
+
+\section*{Experience}
+\resumeRole{Software Engineer Intern}{Jan 2026 -- Aug 2026}{Paychex}{Rochester, NY}
+\begin{itemize}
+  \item Led development of an internal AI developer platform on the \textbf{AI Integrations} team, integrating \textbf{AI agents and MCP tooling} into developer workflows; presented it to executives.
+  \item Built a custom \textbf{software testing and LLM evaluation harness} for developer and Sales workflows to assess reliability.
+  \item Maintained \textbf{Jenkins CI/CD pipelines} supporting automated build and deployment workflows; reduced token usage by \textbf{55\%} with a \textbf{subagent architecture} and context engineering.
+\end{itemize}
+
+\resumeRole{Student Researcher}{Jan 2026 -- May 2026}{Rochester Institute of Technology}{Rochester, NY}
+\begin{itemize}
+  \item Conducted research on large language models and memory.
+  \item Focused on how memory and context shape long-term model behavior.
+\end{itemize}
+
+\resumeRole{Software Engineer Intern}{Feb 2025 -- Aug 2025}{Real Wave Capital}{Remote}
+\begin{itemize}
+  \item Architected production Angular and TypeScript interfaces for autonomous agents supporting \textbf{100+ daily users}; rewrote tool-calling and context strategy to cut token spend by roughly \textbf{50\%}.
+  \item Integrated APIs into .NET-backed production workflows, improving endpoint response times by \textbf{25\%} and scaling to \textbf{6,000+ weekly requests}.
+\end{itemize}
+
+\section*{Projects}
+\resumeRole{iMessages Chatbot Server}{Nov 2025 -- 2026}{Python, asyncio, SQLite, AppleScript}{\href{https://github.com/alextyhwang/iMessages-Chatbot-Server}{github.com/alextyhwang/iMessages-Chatbot-Server}}
+\begin{itemize}
+  \item Built a \textbf{Python automation} gateway for macOS Messages with concurrent, stateful conversations, SQLite persistence, and semaphore-controlled API calls for up to \textbf{20 concurrent users}.
+  \item Designed asynchronous workflows targeting under \textbf{2 seconds} of internal latency and 10--15 sustained messages per minute.
+\end{itemize}
+
+\resumeRole{Chatio Agentic Behavior Benchmark}{Jun 2025 -- Present}{Next.js, Python, TypeScript}{\href{https://chatio.dev}{chatio.dev}}
+\begin{itemize}
+  \item Built an LLM benchmark with deterministic Python validation and task-driven tests of real-world usability.
+  \item Engineered a streaming interface and persistence layer using IndexedDB and Cloudflare R2, reducing image storage by \textbf{95\%}.
+\end{itemize}
+
+\section*{Leadership and Activities}
+\resumeRole{Founder and President}{Jan 2022 -- Present}{Bay Area Stem Academy}{San Jose, CA \,|\, \href{https://bayareastemacademy.org}{bayareastemacademy.org}}
+\begin{itemize}
+  \item Founded a 501(c)(3) nonprofit that taught \textbf{660+ students} through \textbf{15+ free camps}, partnered with \textbf{5+ schools}, and delivered \textbf{\textdollar{}35,000+} in free STEM education.
+\end{itemize}
+
+\resumeRole{Event Coordinator and Executive Board Member}{Sep 2024 -- Present}{RIT Asian Culture Society}{Rochester, NY}
+\begin{itemize}
+  \item Co-lead a community of \textbf{200+ members} and organize Night Market, an annual university event with \textbf{600 attendees}.
+\end{itemize}
+
+\end{document}

@@ -1,0 +1,14 @@
+Candidate
+San Francisco, CA
+candidate@example.com
+000-000-0000
+
+Varda Space Industries
+Site Reliability Internship, Spring 2027
+El Segundo, CA
+
+I'm applying for the Spring 2027 Site Reliability internship in El Segundo. I'm a U.S. citizen, authorized to work in the U.S. without sponsorship, and I can work on site from January through May 2027.
+
+At Paychex I led an internal AI developer platform on the AI Integrations team, including Jenkins and Azure DevOps CI/CD in that workflow. At Real Wave I shipped production agent interfaces used by 100+ people a day, about 6,000 requests a week. I write Python, including a concurrent iMessages chatbot server with asyncio.
+
+That's the work I want this spring: keep internal platforms reliable and automate the painful parts.

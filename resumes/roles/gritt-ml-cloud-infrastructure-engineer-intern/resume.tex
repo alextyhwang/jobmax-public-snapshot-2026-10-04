@@ -1,0 +1,106 @@
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage[top=0.32in,bottom=0.32in,left=0.45in,right=0.45in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{etoolbox}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\renewcommand{\familydefault}{\sfdefault}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlist[itemize]{leftmargin=0.24in, topsep=1pt, itemsep=1pt, parsep=0pt, partopsep=0pt}
+\titleformat{\section}{\normalsize\bfseries}{}{0pt}{}[\titlerule]
+\titlespacing*{\section}{0pt}{5pt}{2pt}
+
+\newif\ifresumeFirstSection
+\newif\ifresumeFirstRole
+\resumeFirstSectiontrue
+\resumeFirstRoletrue
+
+\pretocmd{\section}{%
+  \ifresumeFirstSection
+    \global\resumeFirstSectionfalse
+  \else
+    \vspace{1pt plus 2fill}%
+  \fi
+  \global\resumeFirstRoletrue
+}{}{\PackageError{resume}{Unable to enable flexible section spacing}{}}
+
+\newcommand{\resumeRole}[4]{%
+  \ifresumeFirstRole
+    \global\resumeFirstRolefalse
+  \else
+    \vspace{0pt plus 1fill}%
+  \fi
+  \textbf{#1} \hfill #2\\
+  \textit{#3} \hfill \textit{#4}
+}
+
+\begin{document}
+
+\begin{center}
+{\Large \textbf{Alex Tyh Wang}}\\
+San Francisco, CA \,|\, \href{mailto:at.alex.wang@gmail.com}{at.alex.wang@gmail.com} \,|\, \href{https://www.linkedin.com/in/alex-tyh-wang/}{LinkedIn} \,|\, \href{https://github.com/alextyhwang}{GitHub} \,|\, \href{https://alexwang.site}{alexwang.site}
+\end{center}
+
+\section*{Summary}
+Computer science undergraduate with \textbf{Python} experience building AI evaluation pipelines, CI/CD-backed developer platforms, and production agent infrastructure.
+
+\section*{Education}
+\textbf{Rochester Institute of Technology} \hfill Rochester, NY\\
+Bachelor of Science in Computer Science \hfill Expected May 2028
+
+\section*{Skills}
+\textbf{Languages:} Python, TypeScript, JavaScript, Java, C, C++, C\#, SQL\\
+\textbf{Infrastructure and Tools:} Jenkins, Azure DevOps, CI/CD, asyncio, SQLite, PostgreSQL, REST, Cloudflare R2, Git\\
+\textbf{AI Systems:} LLM evaluation, model reliability, AI agents, MCP, tool calling, context engineering, token optimization, OpenAI API, OpenRouter
+
+\section*{Experience}
+\resumeRole{Software Engineer Intern}{Jan 2026 -- Aug 2026}{Paychex}{Rochester, NY}
+\begin{itemize}
+  \item Led development of an internal AI developer platform on the \textbf{AI Integrations} team that integrated \textbf{AI agents and MCP tooling} into enterprise developer workflows; presented the platform to executives.
+  \item Built \textbf{LLM evaluation} systems for real developer workflows, comparing model behavior, reliability, and usefulness across production-like tasks.
+  \item Reduced token usage by \textbf{55\%} with a \textbf{subagent architecture}; maintained and updated \textbf{Jenkins CI/CD} pipelines supporting automated build and deployment workflows.
+\end{itemize}
+
+\resumeRole{Student Researcher}{Jan 2026 -- May 2026}{Rochester Institute of Technology}{Rochester, NY}
+\begin{itemize}
+  \item Conducted research on large language models and memory.
+\end{itemize}
+
+\resumeRole{Software Engineer Intern}{Feb 2025 -- Aug 2025}{Real Wave Capital}{Remote}
+\begin{itemize}
+  \item Rewrote MCP tool-calling and context strategy for autonomous AI agents, supporting 100+ daily users and reducing token spend by roughly 50\%.
+  \item Integrated OpenAI API and OpenRouter into production agent flows with .NET backend contributions, improving endpoint response times by 25\% and scaling to 6,000+ weekly requests.
+\end{itemize}
+
+\section*{Projects}
+\resumeRole{Chatio Agentic Behavior Benchmark}{Jun 2025 -- Present}{Python, TypeScript, Next.js, LLM Evaluation}{\href{https://chatio.dev}{chatio.dev}}
+\begin{itemize}
+  \item Built a ~500-prompt LLM benchmark evaluating assistant usefulness, with a hybrid pipeline of blind human review, ensemble LLM-as-judge scoring, and deterministic \textbf{Python} validation.
+  \item Kept the benchmark dataset private and documented decontamination, scoring, ethics, and limitations in a public v1.0 system card.
+\end{itemize}
+
+\resumeRole{iMessages Chatbot Server}{Nov 2025 -- 2026}{Python, asyncio, SQLite, AppleScript}{\href{https://github.com/alextyhwang/iMessages-Chatbot-Server}{GitHub}}
+\begin{itemize}
+  \item Built an asyncio Python API gateway for macOS Messages, supporting 15--20 concurrent stateful AI conversations over iMessage.
+  \item Engineered SQLite conversation memory, debounce batching, and semaphore-controlled API calls targeting under-2s internal latency.
+\end{itemize}
+
+\section*{Leadership and Activities}
+\resumeRole{Founder and President}{Jan 2022 -- Present}{Bay Area Stem Academy}{San Jose, CA \,|\, \href{https://bayareastemacademy.org}{bayareastemacademy.org}}
+\begin{itemize}
+  \item Founded a 501(c)(3) nonprofit offering free robotics, machine learning, web development, 3D modeling, and engineering workshops; taught \textbf{660+ students} through \textbf{15+ free camps} and partnered with \textbf{5+ schools}.
+  \item Led website development, curriculum, workshops, mentoring, outreach, and logistics, providing \textbf{\textdollar{}35,000+} in free STEM education and donating \textbf{\textdollar{}5,000+} to partner organizations and teams.
+\end{itemize}
+
+\resumeRole{Event Coordinator and Executive Board Member}{Sep 2024 -- Present}{RIT Asian Culture Society}{Rochester, NY}
+\begin{itemize}
+  \item Co-leading a community of \textbf{200+ members} and organizing meetings, fundraising, and Night Market, an annual university-wide event with \textbf{600 attendees}.
+\end{itemize}
+
+\end{document}
